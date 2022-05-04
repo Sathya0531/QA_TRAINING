@@ -1,17 +1,16 @@
-def is_palindrome?(str)
-    len=0
-    x=0
-      while str[x]..str[-1]
-         x+=1
-         len+=1
-      end
-       
-    rev=' '
-      for i in 0...len
-         rev[i]=str[len-1]
-         len-=1
-      end
-      puts str==rev
+def is_palindrome?(string)
+  length=0
+  iterator=0
+    while string[iterator]..string[-1]
+      iterator+=1
+      length+=1
+    end
+  reverse=' '
+    for i in 0...length
+      reverse[i]=string[length-1]
+      length-=1
+    end
+  return string==reverse
     
 end
-    is_palindrome?('malayalam')
+is_palindrome?('malayalam')

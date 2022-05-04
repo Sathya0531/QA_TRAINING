@@ -1,15 +1,14 @@
-def is_prime?(n)
-    flag=0
-    if(n==0||n==1)
+def is_prime?(num)
+  flag=0
+    if(num==0||num==1)
+      flag=1
+    end
+    for iterator in 2..(num/2)
+      if num % iterator == 0
         flag=1
+        break
+      end
     end
-    for i in 2..(n/2)
-        if n%i == 0
-            flag=1
-            break
-        end
-    end
-    puts flag==0
+  return flag == 0
 end
-    is_prime?(97)
-    
+is_prime?(97)

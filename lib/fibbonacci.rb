@@ -1,13 +1,13 @@
-def generate_fibbonacci(i)
-    n1=0
-    n2=1
-     puts n1
-     puts n2
-     for x in 3..i
-        n3=n1 + n2
-        puts n3
-        n1=n2
-        n2=n3
-     end
+def generate_fibbonacci(series_length)
+  num1=0
+  num2=1
+  puts num1
+  puts num2
+    for x in 3..series_length
+      num3=num1 + num2
+      puts num3
+      num1=num2
+      num2=num3
+    end
 end
 generate_fibbonacci(15)

@@ -1,5 +1,4 @@
-def is_even?(i)
-    puts i%2==0
+def is_even?(num)
+ num % 2 == 0
 end
-   
 is_even?(10)

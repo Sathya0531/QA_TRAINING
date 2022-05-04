@@ -1,7 +1,7 @@
 def multipilcation_table(multiplier,limit)
-    for i in 1..limit
-      x=i*multiplier
-      puts"#{i} x #{multiplier} = #{x}"
-    end
+  for iterator in 1..limit
+    multiplied_value=iterator*multiplier
+    puts"#{iterator} x #{multiplier} = #{multiplied_value}"
+  end
 end
 multipilcation_table(7,15)
