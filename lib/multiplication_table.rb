@@ -6,7 +6,6 @@ def multipilcation_table(multiplier,limit)
       multiplied_value[iterator-1][2] = multiplier
       multiplied_value[iterator-1][1] = 'x'
       multiplied_value[iterator-1][0] = iterator
- 
     end
   multiplied_value
 end
