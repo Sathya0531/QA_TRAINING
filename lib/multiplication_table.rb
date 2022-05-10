@@ -1,7 +1,12 @@
 def multipilcation_table(multiplier,limit)
-  for iterator in 1..limit
-    multiplied_value=iterator*multiplier
-    puts"#{iterator} x #{multiplier} = #{multiplied_value}"
-  end
+  multiplied_value = Array.new(limit){Array.new(4)}
+    for iterator in 1..limit
+      multiplied_value[iterator-1][4] = iterator*multiplier
+      multiplied_value[iterator-1][3] = '='
+      multiplied_value[iterator-1][2] = multiplier
+      multiplied_value[iterator-1][1] = 'x'
+      multiplied_value[iterator-1][0] = iterator
+ 
+    end
+  multiplied_value
 end
-multipilcation_table(7,15)

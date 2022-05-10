@@ -1,0 +1,16 @@
+require_relative "./generate_fibbonacci.rb"
+require_relative './is_armstrong.rb'
+require_relative './is_automorphic.rb'
+require_relative './is_even.rb'
+require_relative './is_harshad.rb'
+require_relative './is_palindrome.rb'
+require_relative './is_prime.rb'
+require_relative './multiplication_table.rb'
+print multipilcation_table(7,5)
+puts is_prime?(2)
+puts is_harshad?(102)
+puts is_even?(21)
+puts is_palindrome?('malayalam')
+puts is_automorphic?(142)
+puts is_armstrong?(54748)
+print generate_fibbonacci(8)
