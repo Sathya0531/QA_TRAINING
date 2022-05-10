@@ -7,10 +7,10 @@ def is_armstrong?(number)
     length += 1
   end
   sum = 0
-    while number != 0
-      remainder = number % 10
-      sum = sum + (remainder**length)
-      number /= 10
-    end
+  while number != 0
+    remainder = number % 10
+    sum += (remainder**length)
+    number /= 10
+  end
   sum == temporary_number
 end
