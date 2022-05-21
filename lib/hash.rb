@@ -208,25 +208,24 @@ hash.count { |student| student[:gender] == 'Male' }
 max = hash.map { |data| data[:maths] }.max
 hash.select { |data| data[:maths] == max }.map { |key, _value| key[:first_name] }
 # List of ids and their total marks expected result format: { 1: 188, 2: 267, ...}-4
-puts hash.each_with_object({}) do |student, accumlator|
-  accumlator[student[:id]] =
-    (student[:language] + student[:english] + student[:maths] + student[:science] + student[:social])
+puts hash.reduce({}) do |accumlator,student|
+  accumlator[student[:id]]=student[:maths]+student[:language]+student[:science]+student[:english]+student[:social]
+  accumlator
 end
-
 # Count of students by gender. expected result format: { Male: 27, Female: 73}-5
 group_by_gender = hash.group_by { |student| student[:gender] }
 seperation = {}
-group_by_gender.each { |k, v| seperation.store(k, v.count { |e| e }) }
+group_by_gender.each { |key, value| seperation.store(key, value.count { |element| element }) }
 seperation.reverse_each.to_h
 # How many students have failed in english? Pass mark is 35.-6
 hash.count { |data| data[:english] < 35 }
 # How many students have passed in all subjects?-7
-puts hash.count { |data|
-       [data[:english], data[:language], data[:maths], data[:science],
-        data[:social]].all? do |element|
-         element > 34
-       end
-     }
+hash.count do |data|
+  [data[:english], data[:language], data[:maths], data[:science],
+   data[:social]].all? do |element|
+    element > 34
+  end
+end
 # Add extra properties to the existing student records:
 # pass: 'TRUE' or 'FALSE'
 # rank: integer values if passed in all subjects, nil if failed in at least one subject.
